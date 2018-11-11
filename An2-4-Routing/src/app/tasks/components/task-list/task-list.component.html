@@ -1,0 +1,11 @@
+<div class="text-center">
+  <button (click)="onAddTask()" class="btn btn-primary">Add new</button>
+</div>
+<hr>
+<app-task
+  *ngFor="let task of tasks | async"
+  [task]="task"
+  (completeTask)="onCompleteTask($event)"
+  (editTask)="onEditTask($event)"
+  (deleteTask)="onDeleteTask($event)">
+</app-task>
